@@ -1,6 +1,6 @@
 # Background Hack
 
-This fork contains a small hack to allow the experimental `background=1` parameter to be added to the Vimeo embed. Use like so:
+This fork contains a small hack to allow the [experimental background parameter](https://vimeo.com/forums/topic:278001) `background=1` to be added to the Vimeo embed. Use like so:
 
 ```html
 <div id="made-in-ny"></div>
