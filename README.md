@@ -1,3 +1,29 @@
+# Background Hack
+
+This fork contains a small hack to allow the experimental `background=1` parameter to be added to the Vimeo embed. Use like so:
+
+```html
+<div id="made-in-ny"></div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    var options = {
+        id: 59777392,
+        width: 640,
+        loop: true,
+        background: true
+    };
+
+    var player = new Vimeo.Player('made-in-ny', options);
+
+    player.setVolume(0);
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+</script>
+```
+
 # Vimeo Player API [![Build Status](https://travis-ci.org/vimeo/player.js.svg?branch=master)](https://travis-ci.org/vimeo/player.js) [![Coverage](https://img.shields.io/codecov/c/github/vimeo/player.js.svg?maxAge=2592000)](https://codecov.io/gh/vimeo/player.js) [![npm](https://img.shields.io/npm/v/@vimeo/player.svg?maxAge=2592000)](https://www.npmjs.com/package/@vimeo/player) [![Gitter](https://badges.gitter.im/vimeo/player.js.svg)](https://gitter.im/vimeo/player.js)
 
 The Vimeo Player API allows you to interact with and control an embedded Vimeo
