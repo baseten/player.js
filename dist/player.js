@@ -1161,10 +1161,14 @@ var Player = function () {
 
                 getOEmbedData(url, params).then(function (data) {
                     if (params.background) {
-                        var _url = data.html.match(/src="([a-zA-Z0-9\/:;.?&=_-]+)"/)[1];
-                        var prefix = _url.indexOf('?') ? '&' : '?';
+                        var match = data.html.match(/src="([a-zA-Z0-9\/:;.?&=_-]+)"/);
 
-                        data.html.replace(_url, _url + prefix + 'background=1');
+                        if (match) {
+                            var _url = match[1];
+                            var prefix = _url.indexOf('?') ? '&' : '?';
+
+                            data.html = data.html.replace(_url, _url + prefix + 'background=1');
+                        }
                     }
 
                     var iframe = createEmbed(data, element);

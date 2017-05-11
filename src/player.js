@@ -99,10 +99,14 @@ class Player {
 
                 getOEmbedData(url, params).then((data) => {
                     if (params.background) {
-                        const url = data.html.match( /src="([a-zA-Z0-9\/:;.?&=_-]+)"/ )[ 1 ];
-                        const prefix = url.indexOf( '?' ) ? '&' : '?';
+                        const match = data.html.match( /src="([a-zA-Z0-9\/:;.?&=_-]+)"/ );
 
-                        data.html.replace( url, url + prefix + 'background=1' );
+                        if (match) {
+                            const url = match[ 1 ];
+                            const prefix = url.indexOf( '?' ) ? '&' : '?';
+
+                            data.html = data.html.replace( url, url + prefix + 'background=1' );
+                        }
                     }
 
                     const iframe = createEmbed(data, element);
