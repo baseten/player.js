@@ -1,5 +1,5 @@
 {
-  "name": "@vimeo/player",
+  "name": "@baseten/player",
   "version": "2.0.1",
   "description": "Interact with and control an embedded Vimeo Player.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "src",
     "dist"
   ],
-  "repository": "vimeo/player.js",
+  "repository": "baseten/player.js",
   "bugs": "https://github.com/vimeo/player.js/issues",
   "keywords": [
     "vimeo",
