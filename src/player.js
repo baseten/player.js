@@ -99,7 +99,7 @@ class Player {
 
                 getOEmbedData(url, params).then((data) => {
                     if (params.background) {
-                        const url = data.html.match( /src="(.*)"/ )[ 1 ];
+                        const url = data.html.match( /src="([a-zA-Z0-9\/:;.?&=_-]+)"/ )[ 1 ];
                         const prefix = url.indexOf( '?' ) ? '&' : '?';
 
                         data.html.replace( url, url + prefix + 'background=1' );

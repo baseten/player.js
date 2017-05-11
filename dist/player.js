@@ -1,4 +1,4 @@
-/*! @vimeo/player v2.0.1 | (c) 2017 Vimeo | MIT License | https://github.com/vimeo/player.js */
+/*! @baseten/player v2.0.1 | (c) 2017 Vimeo | MIT License | https://github.com/baseten/player.js */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -1161,7 +1161,7 @@ var Player = function () {
 
                 getOEmbedData(url, params).then(function (data) {
                     if (params.background) {
-                        var _url = data.html.match(/src="(.*)"/)[1];
+                        var _url = data.html.match(/src="([a-zA-Z0-9\/:;.?&=_-]+)"/)[1];
                         var prefix = _url.indexOf('?') ? '&' : '?';
 
                         data.html.replace(_url, _url + prefix + 'background=1');
