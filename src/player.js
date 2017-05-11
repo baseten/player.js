@@ -98,6 +98,13 @@ class Player {
                 const url = getVimeoUrl(params);
 
                 getOEmbedData(url, params).then((data) => {
+                    if (params.background) {
+                        const url = data.html.match( /src="(.*)"/ )[ 1 ];
+                        const prefix = url.indexOf( '?' ) ? '&' : '?';
+
+                        data.html.replace( url, url + prefix + 'background=1' );
+                    }
+
                     const iframe = createEmbed(data, element);
                     this.element = iframe;
 
